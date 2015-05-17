@@ -1,0 +1,24 @@
+<html>
+<head><title>Books found at URL: <%=url%></title></head>
+<body>
+<% items.each do |item| %>
+<p>
+<h2><a href="<%=item.url%>"><%=item.title%>, by <%=item.author%></a></h2>
+<%   if item.rating %>
+<b>Avg. Review:</b> <%=item.rating%> (<%=item.total_ratings%> reviews)
+<br/>
+<%   end %>
+<%   if item.subjects && !item.subjects.empty? %>
+<b>Subjects:</b> <%=item.subjects%>
+<br/>
+<%   end %>
+<%   if item.review %>
+<b>Description:</b> <%=item.review%>
+<%   end %>
+</p>
+
+<% end %>
+
+</body>
+</html>
+
